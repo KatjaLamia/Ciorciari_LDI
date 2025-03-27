@@ -15,12 +15,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 In an earlier experiment, Amanda Roberts collected data that seemed to suggest a very slow adjustment of circadian entrainment after a light-dark inversion in contrast to prior literature and our own experience measuring re-entrainment in mice housed in running wheel cages. So, Andrea Ciorciari set up an experiment to measure re-entrainment using core body temperature and metabolic cage data in mice that were given access to a running wheel or housed in standard conditions.
 
-Emanuel Irizarry implanted Anipill capsules (BodyCAP, Inc.) to continuously record core body temperature in male c57BL/6J mice. Surgeries were performed in January 2024 and mice recovered for ____ before being placed in light-controlled conditions in February 2024. On 2/12/24, the lighting schedule was changed from lights ON at 3am and OFF at 3pm, to lights ON at 3pm and lights OFF at 3am (a 12-hour phase shift, a.k.a. light-dark inversion). 
+Emanuel Irizarry implanted Anipill capsules (BodyCAP, Inc.) to continuously record core body temperature in male c57BL/6J mice. Surgeries were performed in January 2024 and mice recovered for at least one week before being placed in light-controlled conditions in February 2024. On 2/12/24, the lighting schedule was changed from lights ON at 3am and OFF at 3pm, to lights ON at 3pm and lights OFF at 3am (a 12-hour phase shift, a.k.a. light-dark inversion). 
 
 The first CLAMS test was done from 2/6/24 through 2/10/24.
 The second CLAMS test was done from 2/27/24 through 3/3/24.
-
-## Testing change
 
 ```{r load packages, echo=FALSE, include=FALSE}
 Sys.setenv(TZ = "UTC")
