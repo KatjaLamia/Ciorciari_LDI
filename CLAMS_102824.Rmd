@@ -508,7 +508,7 @@ TwoWayTukey_CLRW_VO2_C2 <- aov(VO2 ~ Light*Group, data = SummC1andC2 %>% filter(
 
 data <- TwoWayTukey_CLRW_VO2_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for VO2 in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for VO2 in CLAMS2 CTRL vs RW")
 
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
@@ -583,7 +583,7 @@ TwoWayTukey_CLRW_VCO2_C2 <- aov(VCO2 ~ Light*Group, data = SummC1andC2 %>% filte
 
 data <- TwoWayTukey_CLRW_VCO2_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for VCO2 in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for VCO2 in CLAMS2 CTRL vs RW")
 
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
@@ -658,7 +658,7 @@ TwoWayTukey_CLRW_RER_C2 <- aov(RER ~ Light*Group, data = SummC1andC2 %>% filter(
 
 data <- TwoWayTukey_CLRW_RER_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for RER in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for RER in CLAMS2 CTRL vs RW")
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
 SummC1andC2$Light <- factor(SummC1andC2$Light, levels = c("LIGHT","DARK"))
@@ -732,7 +732,7 @@ TwoWayTukey_CLRW_FEED_C2 <- aov(FEED ~ Light*Group, data = SummC1andC2 %>% filte
 
 data <- TwoWayTukey_CLRW_FEED_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for FEED in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for FEED in CLAMS2 CTRL vs RW")
 
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
@@ -806,7 +806,7 @@ TwoWayTukey_CLRW_DRINK_C2 <- aov(DRINK ~ Light*Group, data = SummC1andC2 %>% fil
 
 data <- TwoWayTukey_CLRW_DRINK_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for DRINK in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for DRINK in CLAMS2 CTRL vs RW")
 
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
@@ -880,7 +880,7 @@ TwoWayTukey_CLRW_PA_C2 <- aov(PA ~ Light*Group, data = SummC1andC2 %>% filter(po
 
 data <- TwoWayTukey_CLRW_PA_C2[c(1:4,7:8), c(1:3,8:9)]
 knitr::kable(data,
-caption = "Two-way ANOVA for PA in CLAMS1 CTRL vs RW")
+caption = "Two-way ANOVA for PA in CLAMS2 CTRL vs RW")
 
 
 SummC1andC2$Group <- factor(SummC1andC2$Group, levels = c("CTRL","RW"))
