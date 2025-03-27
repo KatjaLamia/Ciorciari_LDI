@@ -5613,6 +5613,7 @@ bxp_CBT_phase + geom_boxplot() +
       theme_classic()
 
 ```
+
 ```{r reshape to calculate phase shift for each animal}
 write_excel_csv(ACF_ALL, "ACF_ALL.xls")
 
