@@ -41,7 +41,7 @@ For the purposes of comparing data collected during light and dark phases, we de
 #CLAMS data were provided in an Excel workbook from Amanda Roberts. Each mouse was in a separate sheet. Those were exported as .csv files
 
 coltypes <- "ccddddddddd"
-CLAMS1_1451 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1451.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1451 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1451.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1451$mouse <- 1451
 CLAMS1_1451$pill <- 12
 CLAMS1_1451$Group <- "RW"
@@ -49,7 +49,7 @@ CLAMS1_1451$CorrectDate <- date(mdy_hm(CLAMS1_1451$`DATE/TIME`))
 CLAMS1_1451$TimeOfDay <- hour(mdy_hm(CLAMS1_1451$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1451$`DATE/TIME`))/60
 
-CLAMS1_1468 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1468.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1468 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1468.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1468$mouse <- 1468
 CLAMS1_1468$pill <- 11
 CLAMS1_1468$Group <- "RW"
@@ -57,7 +57,7 @@ CLAMS1_1468$CorrectDate <- date(mdy_hm(CLAMS1_1468$`DATE/TIME`))
 CLAMS1_1468$TimeOfDay <- hour(mdy_hm(CLAMS1_1468$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1468$`DATE/TIME`))/60
 
-CLAMS1_1469 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1469.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1469 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1469.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1469$mouse <- 1469
 CLAMS1_1469$pill <- 9
 CLAMS1_1469$Group <- "RW"
@@ -65,7 +65,7 @@ CLAMS1_1469$CorrectDate <- date(mdy_hm(CLAMS1_1469$`DATE/TIME`))
 CLAMS1_1469$TimeOfDay <- hour(mdy_hm(CLAMS1_1469$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1469$`DATE/TIME`))/60
 
-CLAMS1_1470 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1470.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1470 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1470.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1470$mouse <- 1470
 CLAMS1_1470$pill <- 10
 CLAMS1_1470$Group <- "RW"
@@ -73,7 +73,7 @@ CLAMS1_1470$CorrectDate <- date(mdy_hm(CLAMS1_1470$`DATE/TIME`))
 CLAMS1_1470$TimeOfDay <- hour(mdy_hm(CLAMS1_1470$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1470$`DATE/TIME`))/60
 
-CLAMS1_1482 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1482.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1482 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1482.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1482$mouse <- 1482
 CLAMS1_1482$pill <- 7
 CLAMS1_1482$Group <- "CTRL"
@@ -81,7 +81,7 @@ CLAMS1_1482$CorrectDate <- date(mdy_hm(CLAMS1_1482$`DATE/TIME`))
 CLAMS1_1482$TimeOfDay <- hour(mdy_hm(CLAMS1_1482$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1482$`DATE/TIME`))/60
 
-CLAMS1_1523 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1523.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1523 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1523.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1523$mouse <- 1523
 CLAMS1_1523$pill <- 8
 CLAMS1_1523$Group <- "CTRL"
@@ -89,7 +89,7 @@ CLAMS1_1523$CorrectDate <- date(mdy_hm(CLAMS1_1523$`DATE/TIME`))
 CLAMS1_1523$TimeOfDay <- hour(mdy_hm(CLAMS1_1523$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1523$`DATE/TIME`))/60
 
-CLAMS1_1541 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1541.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1541 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1541.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1541$mouse <- 1541
 CLAMS1_1541$pill <- 1
 CLAMS1_1541$Group <- "CTRL"
@@ -97,7 +97,7 @@ CLAMS1_1541$CorrectDate <- date(mdy_hm(CLAMS1_1541$`DATE/TIME`))
 CLAMS1_1541$TimeOfDay <- hour(mdy_hm(CLAMS1_1541$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1541$`DATE/TIME`))/60
 
-#CLAMS1_1548 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1548.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+#CLAMS1_1548 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1548.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 #CLAMS1_1548$mouse <- 1548
 #CLAMS1_1548$pill <- 4
 #CLAMS1_1548$Group <- "CTRL"
@@ -105,7 +105,7 @@ CLAMS1_1541$TimeOfDay <- hour(mdy_hm(CLAMS1_1541$`DATE/TIME`)) +
 #CLAMS1_1548$TimeOfDay <- hour(mdy_hm(CLAMS1_1548$`DATE/TIME`)) +
  #          minute(mdy_hm(CLAMS1_1548$`DATE/TIME`))/60
 
-CLAMS1_1549 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1549.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1549 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1549.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1549$mouse <- 1549
 CLAMS1_1549$pill <- 3
 CLAMS1_1549$Group <- "CTRL"
@@ -113,7 +113,7 @@ CLAMS1_1549$CorrectDate <- date(mdy_hm(CLAMS1_1549$`DATE/TIME`))
 CLAMS1_1549$TimeOfDay <- hour(mdy_hm(CLAMS1_1549$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1549$`DATE/TIME`))/60
 
-CLAMS1_1550 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1550.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1550 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1550.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1550$mouse <- 1550
 CLAMS1_1550$pill <- 2
 CLAMS1_1550$Group <- "CTRL"
@@ -121,7 +121,7 @@ CLAMS1_1550$CorrectDate <- date(mdy_hm(CLAMS1_1550$`DATE/TIME`))
 CLAMS1_1550$TimeOfDay <- hour(mdy_hm(CLAMS1_1550$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1550$`DATE/TIME`))/60
 
-CLAMS1_1543 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1543.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1543 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1543.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1543$mouse <- 1543
 CLAMS1_1543$pill <- 5
 CLAMS1_1543$Group <- "CTRL"
@@ -129,7 +129,7 @@ CLAMS1_1543$CorrectDate <- date(mdy_hm(CLAMS1_1543$`DATE/TIME`))
 CLAMS1_1543$TimeOfDay <- hour(mdy_hm(CLAMS1_1543$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1543$`DATE/TIME`))/60
 
-CLAMS1_1546 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1546.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1546 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1546.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1546$mouse <- 1546
 CLAMS1_1546$pill <- 6
 CLAMS1_1546$Group <- "CTRL"
@@ -137,7 +137,7 @@ CLAMS1_1546$CorrectDate <- date(mdy_hm(CLAMS1_1546$`DATE/TIME`))
 CLAMS1_1546$TimeOfDay <- hour(mdy_hm(CLAMS1_1546$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1546$`DATE/TIME`))/60
 
-CLAMS1_1589 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1589.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1589 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1589.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1589$mouse <- 1589
 CLAMS1_1589$pill <- 13
 CLAMS1_1589$Group <- "RW"
@@ -145,7 +145,7 @@ CLAMS1_1589$CorrectDate <- date(mdy_hm(CLAMS1_1589$`DATE/TIME`))
 CLAMS1_1589$TimeOfDay <- hour(mdy_hm(CLAMS1_1589$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1589$`DATE/TIME`))/60
 
-CLAMS1_1585 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1585.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1585 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1585.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1585$mouse <- 1585
 CLAMS1_1585$pill <- 14
 CLAMS1_1585$Group <- "RW"
@@ -153,7 +153,7 @@ CLAMS1_1585$CorrectDate <- date(mdy_hm(CLAMS1_1585$`DATE/TIME`))
 CLAMS1_1585$TimeOfDay <- hour(mdy_hm(CLAMS1_1585$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS1_1585$`DATE/TIME`))/60
 
-CLAMS1_1453 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest1/1453.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
+CLAMS1_1453 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest1/1453.csv", skip=1, col_types = coltypes) %>% select(1,2,4:11) %>% drop_na()
 CLAMS1_1453$mouse <- 1453
 CLAMS1_1453$pill <- 15
 CLAMS1_1453$Group <- "RW"
@@ -185,7 +185,7 @@ DatCombCLAMS1 <- rbind(CLAMS1_1451,
 #CLAMS data were provided in an Excel workbook from Amanda Roberts. Each mouse was in a separate sheet. Those were exported as .csv files
 
 coltypes <- "ccdddddddd"
-CLAMS2_1451 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1451.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1451 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1451.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1451$mouse <- 1451
 CLAMS2_1451$pill <- 12
 CLAMS2_1451$Group <- "RW"
@@ -193,7 +193,7 @@ CLAMS2_1451$CorrectDate <- date(mdy_hm(CLAMS2_1451$`DATE/TIME`))
 CLAMS2_1451$TimeOfDay <- hour(mdy_hm(CLAMS2_1451$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1451$`DATE/TIME`))/60
 
-CLAMS2_1468 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1468.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1468 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1468.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1468$mouse <- 1468
 CLAMS2_1468$pill <- 11
 CLAMS2_1468$Group <- "RW"
@@ -201,7 +201,7 @@ CLAMS2_1468$CorrectDate <- date(mdy_hm(CLAMS2_1468$`DATE/TIME`))
 CLAMS2_1468$TimeOfDay <- hour(mdy_hm(CLAMS2_1468$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1468$`DATE/TIME`))/60
 
-CLAMS2_1469 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1469.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1469 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1469.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1469$mouse <- 1469
 CLAMS2_1469$pill <- 9
 CLAMS2_1469$Group <- "RW"
@@ -209,7 +209,7 @@ CLAMS2_1469$CorrectDate <- date(mdy_hm(CLAMS2_1469$`DATE/TIME`))
 CLAMS2_1469$TimeOfDay <- hour(mdy_hm(CLAMS2_1469$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1469$`DATE/TIME`))/60
 
-CLAMS2_1470 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1470.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1470 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1470.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1470$mouse <- 1470
 CLAMS2_1470$pill <- 10
 CLAMS2_1470$Group <- "RW"
@@ -217,7 +217,7 @@ CLAMS2_1470$CorrectDate <- date(mdy_hm(CLAMS2_1470$`DATE/TIME`))
 CLAMS2_1470$TimeOfDay <- hour(mdy_hm(CLAMS2_1470$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1470$`DATE/TIME`))/60
 
-CLAMS2_1482 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1482.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1482 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1482.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1482$mouse <- 1482
 CLAMS2_1482$pill <- 7
 CLAMS2_1482$Group <- "CTRL"
@@ -225,7 +225,7 @@ CLAMS2_1482$CorrectDate <- date(mdy_hm(CLAMS2_1482$`DATE/TIME`))
 CLAMS2_1482$TimeOfDay <- hour(mdy_hm(CLAMS2_1482$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1482$`DATE/TIME`))/60
 
-CLAMS2_1523 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1523.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1523 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1523.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1523$mouse <- 1523
 CLAMS2_1523$pill <- 8
 CLAMS2_1523$Group <- "CTRL"
@@ -233,7 +233,7 @@ CLAMS2_1523$CorrectDate <- date(mdy_hm(CLAMS2_1523$`DATE/TIME`))
 CLAMS2_1523$TimeOfDay <- hour(mdy_hm(CLAMS2_1523$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1523$`DATE/TIME`))/60
 
-CLAMS2_1541 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1541.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1541 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1541.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1541$mouse <- 1541
 CLAMS2_1541$pill <- 1
 CLAMS2_1541$Group <- "CTRL"
@@ -241,7 +241,7 @@ CLAMS2_1541$CorrectDate <- date(mdy_hm(CLAMS2_1541$`DATE/TIME`))
 CLAMS2_1541$TimeOfDay <- hour(mdy_hm(CLAMS2_1541$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1541$`DATE/TIME`))/60
 
-#CLAMS2_1548 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1548.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+#CLAMS2_1548 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1548.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 #CLAMS2_1548$mouse <- 1548
 #CLAMS2_1548$pill <- 4
 #CLAMS2_1548$Group <- "CTRL"
@@ -249,7 +249,7 @@ CLAMS2_1541$TimeOfDay <- hour(mdy_hm(CLAMS2_1541$`DATE/TIME`)) +
 #CLAMS2_1548$TimeOfDay <- hour(mdy_hm(CLAMS2_1548$`DATE/TIME`)) +
 #           minute(mdy_hm(CLAMS2_1548$`DATE/TIME`))/60
 
-CLAMS2_1549 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1549.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1549 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1549.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1549$mouse <- 1549
 CLAMS2_1549$pill <- 3
 CLAMS2_1549$Group <- "CTRL"
@@ -257,7 +257,7 @@ CLAMS2_1549$CorrectDate <- date(mdy_hm(CLAMS2_1549$`DATE/TIME`))
 CLAMS2_1549$TimeOfDay <- hour(mdy_hm(CLAMS2_1549$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1549$`DATE/TIME`))/60
 
-CLAMS2_1550 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1550.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1550 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1550.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1550$mouse <- 1550
 CLAMS2_1550$pill <- 2
 CLAMS2_1550$Group <- "CTRL"
@@ -265,7 +265,7 @@ CLAMS2_1550$CorrectDate <- date(mdy_hm(CLAMS2_1550$`DATE/TIME`))
 CLAMS2_1550$TimeOfDay <- hour(mdy_hm(CLAMS2_1550$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1550$`DATE/TIME`))/60
 
-CLAMS2_1543 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1543.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1543 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1543.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1543$mouse <- 1543
 CLAMS2_1543$pill <- 5
 CLAMS2_1543$Group <- "CTRL"
@@ -273,7 +273,7 @@ CLAMS2_1543$CorrectDate <- date(mdy_hm(CLAMS2_1543$`DATE/TIME`))
 CLAMS2_1543$TimeOfDay <- hour(mdy_hm(CLAMS2_1543$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1543$`DATE/TIME`))/60
 
-CLAMS2_1546 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1546.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1546 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1546.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1546$mouse <- 1546
 CLAMS2_1546$pill <- 6
 CLAMS2_1546$Group <- "CTRL"
@@ -281,7 +281,7 @@ CLAMS2_1546$CorrectDate <- date(mdy_hm(CLAMS2_1546$`DATE/TIME`))
 CLAMS2_1546$TimeOfDay <- hour(mdy_hm(CLAMS2_1546$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1546$`DATE/TIME`))/60
 
-CLAMS2_1589 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1589.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1589 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1589.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1589$mouse <- 1589
 CLAMS2_1589$pill <- 13
 CLAMS2_1589$Group <- "RW"
@@ -289,7 +289,7 @@ CLAMS2_1589$CorrectDate <- date(mdy_hm(CLAMS2_1589$`DATE/TIME`))
 CLAMS2_1589$TimeOfDay <- hour(mdy_hm(CLAMS2_1589$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1589$`DATE/TIME`))/60
 
-CLAMS2_1585 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1585.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1585 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1585.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1585$mouse <- 1585
 CLAMS2_1585$pill <- 14
 CLAMS2_1585$Group <- "RW"
@@ -297,7 +297,7 @@ CLAMS2_1585$CorrectDate <- date(mdy_hm(CLAMS2_1585$`DATE/TIME`))
 CLAMS2_1585$TimeOfDay <- hour(mdy_hm(CLAMS2_1585$`DATE/TIME`)) +
            minute(mdy_hm(CLAMS2_1585$`DATE/TIME`))/60
 
-CLAMS2_1453 <- read_delim("DATA/Side_Project/CLAMS_SP/CLAMStest2/1453.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
+CLAMS2_1453 <- read_delim("DATASP/Side_Project/CLAMS_SP/CLAMStest2/1453.csv", skip=1, col_types = coltypes) %>% select(1:10) %>% drop_na()
 CLAMS2_1453$mouse <- 1453
 CLAMS2_1453$pill <- 15
 CLAMS2_1453$Group <- "RW"
@@ -346,7 +346,7 @@ CLAMS_Comb <- CLAMS_Comb %>% mutate(ZTgroup = ifelse(Lightseries == 1,
 ```
 
 
-```{r statistics for CLAMS, fig.height=2.5, fig.width=3.5}
+```{r statistics for CLAMS and grouped boxplots, fig.height=2.5, fig.width=3.5}
 
 SummCLAMSComb <- summarise(CLAMS_Comb %>%
                     group_by(ExpPhase, ZTgroup, Group) %>%
@@ -533,6 +533,7 @@ bxp + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
+ggsave("VO2_CLAMS1and2.png")
 
 bxpB <- ggplot(
     SummC1andC2,
@@ -553,7 +554,7 @@ bxpB + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
-
+ggsave("VO2_CTRLandRW.png")
 
 # VCO2
 AOV_Tukey_VCO2 <- aov(VCO2 ~ portion*Light*Group, 
@@ -607,6 +608,7 @@ bxp + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
+ggsave("VCO2_CLAMS1and2.png")
 
 bxpB <- ggplot(
     SummC1andC2,
@@ -627,6 +629,7 @@ bxpB + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
+ggsave("VCO2_CTRLandRW.png")
 
 # RER
 AOV_Tukey_RER <- aov(RER ~ portion*Light*Group, 
@@ -679,6 +682,7 @@ bxp + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
+ggsave("RER_CLAMS1and2.png")
 
 bxpB <- ggplot(
     SummC1andC2,
@@ -699,6 +703,7 @@ bxpB + geom_boxplot(outlier.size = 0.2) +
   font("ylab", size = 10, color = "black") +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
+ggsave("RER_CTRLandRW.png")
 
 # FEED
 AOV_Tukey_FEED <- aov(FEED ~ portion*Light*Group, 
