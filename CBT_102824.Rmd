@@ -5741,6 +5741,8 @@ bxp + geom_boxplot(outlier.size = 0.2) +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
 ```
+
+
 ```{r export csv files in AWD format for ClockLab}
 
 # Generate the required Header including the date and time at which series start
