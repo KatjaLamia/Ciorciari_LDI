@@ -41,8 +41,8 @@ library(knitr)
 #NB: The raw data files from Anipill include characters with problematic coding so they need to be saved as "CSV UTF-8" format files to be read in properly here.
 #NB: Andrea's data has dates in day-month-year and temperatures use comma instead of "." for decimal so need to convert all prior to analysis.
 
-Data1 <- read.csv("DATA/Side_Project/Temperature_copy/Week4converted.csv")
-DataA <- read.csv("DATA/Side_Project/Temperature_copy/Week4Aconverted.csv")
+Data1 <- read.csv("Week4converted.csv")
+DataA <- read.csv("Week4Aconverted.csv")
 
 ```
 
@@ -809,7 +809,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -838,7 +838,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -867,7 +867,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -895,7 +895,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -923,7 +923,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -951,7 +951,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -979,7 +979,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1041,7 +1041,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1070,7 +1070,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1099,7 +1099,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1127,7 +1127,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1155,7 +1155,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1183,7 +1183,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1211,7 +1211,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1272,7 +1272,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1301,7 +1301,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1330,7 +1330,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1358,7 +1358,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1386,7 +1386,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1414,7 +1414,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1442,7 +1442,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1503,7 +1503,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1532,7 +1532,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1561,7 +1561,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1589,7 +1589,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1617,7 +1617,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1645,7 +1645,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1673,7 +1673,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1734,7 +1734,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1763,7 +1763,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1792,7 +1792,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1820,7 +1820,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1848,7 +1848,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1876,7 +1876,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1904,7 +1904,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1967,7 +1967,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -1996,7 +1996,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2025,7 +2025,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2053,7 +2053,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2081,7 +2081,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2109,7 +2109,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2137,7 +2137,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2223,7 +2223,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2252,7 +2252,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2281,7 +2281,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2309,7 +2309,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2337,7 +2337,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2365,7 +2365,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2393,7 +2393,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2455,7 +2455,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2484,7 +2484,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2513,7 +2513,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2541,7 +2541,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2569,7 +2569,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2597,7 +2597,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2625,7 +2625,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2686,7 +2686,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2715,7 +2715,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2744,7 +2744,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2772,7 +2772,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2800,7 +2800,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2828,7 +2828,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2856,7 +2856,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2917,7 +2917,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2946,7 +2946,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -2975,7 +2975,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3003,7 +3003,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3031,7 +3031,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3059,7 +3059,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3087,7 +3087,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3148,7 +3148,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3177,7 +3177,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3206,7 +3206,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3234,7 +3234,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3262,7 +3262,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3290,7 +3290,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3318,7 +3318,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3379,7 +3379,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3408,7 +3408,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3437,7 +3437,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3465,7 +3465,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3493,7 +3493,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3521,7 +3521,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3549,7 +3549,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3610,7 +3610,7 @@ mouseT0$CBT[1] = ifelse(is.na(mouseT0$CBT[1]),
 mouseT0$CBT <- na.approx(mouseT0$CBT)
 test <- mouseT0$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT0 <- plot(ts_mouse)
+pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3639,7 +3639,7 @@ mouseT1$CBT[1] = ifelse(is.na(mouseT1$CBT[1]),
 mouseT1$CBT <- na.approx(mouseT1$CBT)
 test <- mouseT1$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT1 <- plot(ts_mouse)
+pT1 <- plot(ts_mouse)
 testL <- mouseT1$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T1acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3668,7 +3668,7 @@ mouseT3$CBT[1] = ifelse(is.na(mouseT3$CBT[1]),
 mouseT3$CBT <- na.approx(mouseT3$CBT)
 test <- mouseT3$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT3 <- plot(ts_mouse)
+pT3 <- plot(ts_mouse)
 testL <- mouseT3$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T3acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3696,7 +3696,7 @@ mouseT2$CBT[1] = ifelse(is.na(mouseT2$CBT[1]),
 mouseT2$CBT <- na.approx(mouseT2$CBT)
 test <- mouseT2$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT2 <- plot(ts_mouse)
+pT2 <- plot(ts_mouse)
 testL <- mouseT2$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T2acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3724,7 +3724,7 @@ mouseT4$CBT[1] = ifelse(is.na(mouseT4$CBT[1]),
 mouseT4$CBT <- na.approx(mouseT4$CBT)
 test <- mouseT4$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT4 <- plot(ts_mouse)
+pT4 <- plot(ts_mouse)
 testL <- mouseT4$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T4acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3752,7 +3752,7 @@ mouseT5$CBT[1] = ifelse(is.na(mouseT5$CBT[1]),
 mouseT5$CBT <- na.approx(mouseT5$CBT)
 test <- mouseT5$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT5 <- plot(ts_mouse)
+pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -3780,7 +3780,7 @@ mouseT6$CBT[1] = ifelse(is.na(mouseT6$CBT[1]),
 mouseT6$CBT <- na.approx(mouseT6$CBT)
 test <- mouseT6$CBT
 ts_mouse <- ts(test, start = 1, frequency = 12, deltat = 1)
-#pT6 <- plot(ts_mouse)
+pT6 <- plot(ts_mouse)
 testL <- mouseT6$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 12, deltat = 1)
 T6acf <- acf(ts_mouse, lag.max = 30*12, plot = FALSE)
@@ -5741,3 +5741,18 @@ bxp + geom_boxplot(outlier.size = 0.2) +
   font("xy.text", size = 10, color = "black") +
       theme_classic()
 ```
+```{r export csv files in AWD format for ClockLab}
+
+# Generate the required Header including the date and time at which series start
+
+for (i in c(1,3:15)) {
+  Pill <- i
+AWDdata <- SeriesData %>% filter(mouse == Pill) %>% select(CBTtest) %>% rename("test" = "CBTtest")
+header <- c("05-feb-2024","00:00",20,0,Pill,"M")
+header <- data.frame(header) %>% rename("test" = "header")
+AWDdata <- rbind(header,AWDdata)
+write_csv(AWDdata,paste0("Mouse",Pill,"Series.AWD"))
+}
+
+```
+

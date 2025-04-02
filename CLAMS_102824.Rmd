@@ -333,13 +333,11 @@ CLAMS_Comb <- rbind(DatCombCLAMS1,DatCombCLAMS2) %>%
 CLAMS_Comb <- CLAMS_Comb %>%
   mutate(ExpPhase = ifelse(datetime_corr < dmy("12-02-2024"), "CLAMS1", "CLAMS2"))
 
-# Remove data for mouse #1548 because the CLAMS data are very low - cage not functioning properly
-CLAMS_Comb <- CLAMS_Comb %>% filter(!mouse == 1548)
+# Remove data for mouse #15
+#CLAMS_Comb <- CLAMS_Comb %>% filter(!mouse == 1589 & !mouse == 1549)
 
-# Test removing mouse #1546
-CLAMS_Comb <- CLAMS_Comb %>% filter(!mouse == 1546 
-                                    #& !mouse == 1549
-                                    )
+# Test removing mouse #1589 and #1549
+#CLAMS_Comb <- CLAMS_Comb %>% filter(!mouse == 1589 & !mouse == 1549)
 
 # Test calculating RER from VO2 and VCO2 instead of using numbers from Amanda
 
@@ -955,7 +953,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT0 <- plot(ts_mouse)
+##pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -980,7 +978,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT5 <- plot(ts_mouse)
+##pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1012,7 +1010,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT0 <- plot(ts_mouse)
+##pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1037,7 +1035,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT5 <- plot(ts_mouse)
+##pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1070,7 +1068,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT0 <- plot(ts_mouse)
+##pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1095,7 +1093,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1127,7 +1125,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1152,7 +1150,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1186,7 +1184,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1211,7 +1209,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1244,7 +1242,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1269,7 +1267,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1303,7 +1301,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1328,7 +1326,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1364,7 +1362,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1389,7 +1387,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1423,7 +1421,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1448,7 +1446,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1482,7 +1480,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1507,7 +1505,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1541,7 +1539,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1566,7 +1564,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1593,71 +1591,13 @@ ACFtib$mouse <- Pill
 ACFcombRW <- rbind(ACFcombRW, ACFtib)
 
 
-#Pill <- 6
-
-#mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
- # select(datetime_corr, VO2, Lightseries)
-#test <- mouseT0$VO2
-#ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT0 <- plot(ts_mouse)
-#testL <- mouseT0$Lightseries
-#ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-#T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-#T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
-#colnames(T0acftib) <- c("hours","ACF")
-#T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-#MAX <- max(T0acftib$ACF)
-#PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
-#T0acftib <- T0acftib %>% filter(hours == PeriodACF)
-#T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-#T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
-#colnames(T0ccftib) <- c("hours","ACF")
-#T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
-#MAX <- max(T0ccftib$ACF)
-#PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
-#T0acftib$PeriodACF <- T0acftib$hours * 17/15
-#T0acftib$PhaseCCF <- PhaseCCF
-#T0acftib$group <- "RW"
-#T0acftib$portion <- "CLAMS1"
-
-#mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
-#  select(datetime_corr, VO2, Lightseries)
-#test <- mouseT5$VO2
-#ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT5 <- plot(ts_mouse)
-#testL <- mouseT5$Lightseries
-#ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-#T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-#T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
-#colnames(T5acftib) <- c("hours","ACF")
-#T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-#MAX <- max(T5acftib$ACF)
-#PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
-#T5acftib <- T5acftib %>% filter(hours == PeriodACF)
-#T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-#T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
-#colnames(T5ccftib) <- c("hours","ACF")
-#T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
-#MAX <- max(T5ccftib$ACF)
-#PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
-#T5acftib$PeriodACF <- T5acftib$hours * 17/15
-#T5acftib$PhaseCCF <- PhaseCCF
-#T5acftib$group <- "RW"
-#T5acftib$portion <- "CLAMS2"
-
-
-#ACFtib <- rbind(T0acftib,T5acftib)
-#ACFtib$mouse <- Pill
-#ACFcombRW <- rbind(ACFcombRW, ACFtib)
-
-
-Pill <- 7
+Pill <- 6
 
 mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1682,7 +1622,65 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
+testL <- mouseT5$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
+colnames(T5acftib) <- c("hours","ACF")
+T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T5acftib$ACF)
+PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
+T5acftib <- T5acftib %>% filter(hours == PeriodACF)
+T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
+colnames(T5ccftib) <- c("hours","ACF")
+T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T5ccftib$ACF)
+PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
+T5acftib$PeriodACF <- T5acftib$hours * 17/15
+T5acftib$PhaseCCF <- PhaseCCF
+T5acftib$group <- "RW"
+T5acftib$portion <- "CLAMS2"
+
+
+ACFtib <- rbind(T0acftib,T5acftib)
+ACFtib$mouse <- Pill
+ACFcombRW <- rbind(ACFcombRW, ACFtib)
+
+
+Pill <- 7
+
+mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, VO2, Lightseries)
+test <- mouseT0$VO2
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT0 <- plot(ts_mouse)
+testL <- mouseT0$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
+colnames(T0acftib) <- c("hours","ACF")
+T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T0acftib$ACF)
+PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
+T0acftib <- T0acftib %>% filter(hours == PeriodACF)
+T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
+colnames(T0ccftib) <- c("hours","ACF")
+T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T0ccftib$ACF)
+PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
+T0acftib$PeriodACF <- T0acftib$hours * 17/15
+T0acftib$PhaseCCF <- PhaseCCF
+T0acftib$group <- "RW"
+T0acftib$portion <- "CLAMS1"
+
+mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, VO2, Lightseries)
+test <- mouseT5$VO2
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1716,7 +1714,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT0$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1741,7 +1739,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VO2, Lightseries)
 test <- mouseT5$VO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1871,7 +1869,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1896,7 +1894,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1928,7 +1926,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1953,7 +1951,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -1985,7 +1983,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2010,7 +2008,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2042,7 +2040,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2067,7 +2065,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2099,7 +2097,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2124,7 +2122,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2157,7 +2155,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2182,7 +2180,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2215,7 +2213,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2240,7 +2238,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2276,7 +2274,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2301,7 +2299,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2333,7 +2331,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2358,7 +2356,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2391,7 +2389,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2416,7 +2414,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2449,7 +2447,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2474,7 +2472,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2501,70 +2499,13 @@ ACFtib$mouse <- Pill
 ACFcombRW <- rbind(ACFcombRW, ACFtib)
 
 
-#Pill <- 6
-
-#mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
-#  select(datetime_corr, VCO2, Lightseries)
-#test <- mouseT0$VCO2
-#ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT0 <- plot(ts_mouse)
-#testL <- mouseT0$Lightseries
-#ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-#T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-#T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
-#colnames(T0acftib) <- c("hours","ACF")
-#T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-#MAX <- max(T0acftib$ACF)
-#PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
-#T0acftib <- T0acftib %>% filter(hours == PeriodACF)
-#T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-#T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
-#colnames(T0ccftib) <- c("hours","ACF")
-#T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
-#MAX <- max(T0ccftib$ACF)
-#PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
-#T0acftib$PeriodACF <- T0acftib$hours * 17/15
-#T0acftib$PhaseCCF <- PhaseCCF
-#T0acftib$group <- "RW"
-#T0acftib$portion <- "CLAMS1"
-
-#mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
-#  select(datetime_corr, VCO2, Lightseries)
-#test <- mouseT5$VCO2
-#ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-#pT5 <- plot(ts_mouse)
-#testL <- mouseT5$Lightseries
-#ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-#T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-#T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
-#colnames(T5acftib) <- c("hours","ACF")
-#T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-#MAX <- max(T5acftib$ACF)
-#PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
-#T5acftib <- T5acftib %>% filter(hours == PeriodACF)
-#T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-#T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
-#colnames(T5ccftib) <- c("hours","ACF")
-#T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
-#MAX <- max(T5ccftib$ACF)
-#PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
-#T5acftib$PeriodACF <- T5acftib$hours * 17/15
-#T5acftib$PhaseCCF <- PhaseCCF
-#T5acftib$group <- "RW"
-#T5acftib$portion <- "CLAMS2"
-
-#ACFtib <- rbind(T0acftib,T5acftib)
-#ACFtib$mouse <- Pill
-#ACFcombRW <- rbind(ACFcombRW, ACFtib)
-
-
-Pill <- 7
+Pill <- 6
 
 mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2589,7 +2530,64 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
+testL <- mouseT5$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
+colnames(T5acftib) <- c("hours","ACF")
+T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T5acftib$ACF)
+PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
+T5acftib <- T5acftib %>% filter(hours == PeriodACF)
+T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
+colnames(T5ccftib) <- c("hours","ACF")
+T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T5ccftib$ACF)
+PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
+T5acftib$PeriodACF <- T5acftib$hours * 17/15
+T5acftib$PhaseCCF <- PhaseCCF
+T5acftib$group <- "RW"
+T5acftib$portion <- "CLAMS2"
+
+ACFtib <- rbind(T0acftib,T5acftib)
+ACFtib$mouse <- Pill
+ACFcombRW <- rbind(ACFcombRW, ACFtib)
+
+
+Pill <- 7
+
+mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, VCO2, Lightseries)
+test <- mouseT0$VCO2
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT0 <- plot(ts_mouse)
+testL <- mouseT0$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
+colnames(T0acftib) <- c("hours","ACF")
+T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T0acftib$ACF)
+PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
+T0acftib <- T0acftib %>% filter(hours == PeriodACF)
+T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
+colnames(T0ccftib) <- c("hours","ACF")
+T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T0ccftib$ACF)
+PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
+T0acftib$PeriodACF <- T0acftib$hours * 17/15
+T0acftib$PhaseCCF <- PhaseCCF
+T0acftib$group <- "RW"
+T0acftib$portion <- "CLAMS1"
+
+mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, VCO2, Lightseries)
+test <- mouseT5$VCO2
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2621,7 +2619,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT0$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2646,7 +2644,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, VCO2, Lightseries)
 test <- mouseT5$VCO2
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2778,7 +2776,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2803,7 +2801,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2835,7 +2833,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2860,7 +2858,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2893,7 +2891,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2918,7 +2916,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2951,7 +2949,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -2976,7 +2974,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3009,7 +3007,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3034,7 +3032,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3067,7 +3065,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3092,7 +3090,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3125,7 +3123,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3150,7 +3148,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3186,7 +3184,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3211,7 +3209,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3244,7 +3242,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3269,7 +3267,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3302,7 +3300,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3327,7 +3325,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3360,7 +3358,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3385,7 +3383,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3412,71 +3410,13 @@ ACFtib$mouse <- Pill
 ACFcombRW <- rbind(ACFcombRW, ACFtib)
 
 
-# Pill <- 6
-# 
-# mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, RER, Lightseries)
-# test <- mouseT0$RER
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT0 <- plot(ts_mouse)
-# testL <- mouseT0$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
-# colnames(T0acftib) <- c("hours","ACF")
-# T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T0acftib$ACF)
-# PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
-# T0acftib <- T0acftib %>% filter(hours == PeriodACF)
-# T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
-# colnames(T0ccftib) <- c("hours","ACF")
-# T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T0ccftib$ACF)
-# PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
-# T0acftib$PeriodACF <- T0acftib$hours * 17/15
-# T0acftib$PhaseCCF <- PhaseCCF
-# T0acftib$group <- "RW"
-# T0acftib$portion <- "CLAMS1"
-# 
-# mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, RER, Lightseries)
-# test <- mouseT5$RER
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT5 <- plot(ts_mouse)
-# testL <- mouseT5$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
-# colnames(T5acftib) <- c("hours","ACF")
-# T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T5acftib$ACF)
-# PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
-# T5acftib <- T5acftib %>% filter(hours == PeriodACF)
-# T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
-# colnames(T5ccftib) <- c("hours","ACF")
-# T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T5ccftib$ACF)
-# PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
-# T5acftib$PeriodACF <- T5acftib$hours * 17/15
-# T5acftib$PhaseCCF <- PhaseCCF
-# T5acftib$group <- "RW"
-# T5acftib$portion <- "CLAMS2"
-# 
-# 
-# ACFtib <- rbind(T0acftib,T5acftib)
-# ACFtib$mouse <- Pill
-# ACFcombRW <- rbind(ACFcombRW, ACFtib)
-
-
-Pill <- 7
+Pill <- 6
 
 mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3501,7 +3441,65 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
+testL <- mouseT5$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
+colnames(T5acftib) <- c("hours","ACF")
+T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T5acftib$ACF)
+PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
+T5acftib <- T5acftib %>% filter(hours == PeriodACF)
+T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
+colnames(T5ccftib) <- c("hours","ACF")
+T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T5ccftib$ACF)
+PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
+T5acftib$PeriodACF <- T5acftib$hours * 17/15
+T5acftib$PhaseCCF <- PhaseCCF
+T5acftib$group <- "RW"
+T5acftib$portion <- "CLAMS2"
+
+
+ACFtib <- rbind(T0acftib,T5acftib)
+ACFtib$mouse <- Pill
+ACFcombRW <- rbind(ACFcombRW, ACFtib)
+
+
+Pill <- 7
+
+mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, RER, Lightseries)
+test <- mouseT0$RER
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT0 <- plot(ts_mouse)
+testL <- mouseT0$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
+colnames(T0acftib) <- c("hours","ACF")
+T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T0acftib$ACF)
+PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
+T0acftib <- T0acftib %>% filter(hours == PeriodACF)
+T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
+colnames(T0ccftib) <- c("hours","ACF")
+T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T0ccftib$ACF)
+PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
+T0acftib$PeriodACF <- T0acftib$hours * 17/15
+T0acftib$PhaseCCF <- PhaseCCF
+T0acftib$group <- "RW"
+T0acftib$portion <- "CLAMS1"
+
+mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, RER, Lightseries)
+test <- mouseT5$RER
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3534,7 +3532,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT0$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3559,7 +3557,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, RER, Lightseries)
 test <- mouseT5$RER
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3689,7 +3687,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3714,7 +3712,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3747,7 +3745,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3772,7 +3770,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3805,7 +3803,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3830,7 +3828,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3863,7 +3861,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3888,7 +3886,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3921,7 +3919,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3946,7 +3944,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -3979,7 +3977,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4004,7 +4002,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4037,7 +4035,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4062,7 +4060,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4098,7 +4096,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4123,7 +4121,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4156,7 +4154,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4181,7 +4179,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4214,7 +4212,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4239,7 +4237,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4272,7 +4270,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4297,7 +4295,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4324,71 +4322,13 @@ ACFtib$mouse <- Pill
 ACFcombRW <- rbind(ACFcombRW, ACFtib)
 
 
-# Pill <- 6
-# 
-# mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, FEED1, Lightseries)
-# test <- mouseT0$FEED1
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT0 <- plot(ts_mouse)
-# testL <- mouseT0$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
-# colnames(T0acftib) <- c("hours","ACF")
-# T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T0acftib$ACF)
-# PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
-# T0acftib <- T0acftib %>% filter(hours == PeriodACF)
-# T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
-# colnames(T0ccftib) <- c("hours","ACF")
-# T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T0ccftib$ACF)
-# PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
-# T0acftib$PeriodACF <- T0acftib$hours * 17/15
-# T0acftib$PhaseCCF <- PhaseCCF
-# T0acftib$group <- "RW"
-# T0acftib$portion <- "CLAMS1"
-# 
-# mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, FEED1, Lightseries)
-# test <- mouseT5$FEED1
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT5 <- plot(ts_mouse)
-# testL <- mouseT5$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
-# colnames(T5acftib) <- c("hours","ACF")
-# T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T5acftib$ACF)
-# PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
-# T5acftib <- T5acftib %>% filter(hours == PeriodACF)
-# T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
-# colnames(T5ccftib) <- c("hours","ACF")
-# T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T5ccftib$ACF)
-# PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
-# T5acftib$PeriodACF <- T5acftib$hours * 17/15
-# T5acftib$PhaseCCF <- PhaseCCF
-# T5acftib$group <- "RW"
-# T5acftib$portion <- "CLAMS2"
-# 
-# 
-# ACFtib <- rbind(T0acftib,T5acftib)
-# ACFtib$mouse <- Pill
-# ACFcombRW <- rbind(ACFcombRW, ACFtib)
-
-
-Pill <- 7
+Pill <- 6
 
 mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4413,7 +4353,65 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
+testL <- mouseT5$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
+colnames(T5acftib) <- c("hours","ACF")
+T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T5acftib$ACF)
+PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
+T5acftib <- T5acftib %>% filter(hours == PeriodACF)
+T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
+colnames(T5ccftib) <- c("hours","ACF")
+T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T5ccftib$ACF)
+PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
+T5acftib$PeriodACF <- T5acftib$hours * 17/15
+T5acftib$PhaseCCF <- PhaseCCF
+T5acftib$group <- "RW"
+T5acftib$portion <- "CLAMS2"
+
+
+ACFtib <- rbind(T0acftib,T5acftib)
+ACFtib$mouse <- Pill
+ACFcombRW <- rbind(ACFcombRW, ACFtib)
+
+
+Pill <- 7
+
+mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, FEED1, Lightseries)
+test <- mouseT0$FEED1
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT0 <- plot(ts_mouse)
+testL <- mouseT0$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
+colnames(T0acftib) <- c("hours","ACF")
+T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T0acftib$ACF)
+PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
+T0acftib <- T0acftib %>% filter(hours == PeriodACF)
+T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
+colnames(T0ccftib) <- c("hours","ACF")
+T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T0ccftib$ACF)
+PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
+T0acftib$PeriodACF <- T0acftib$hours * 17/15
+T0acftib$PhaseCCF <- PhaseCCF
+T0acftib$group <- "RW"
+T0acftib$portion <- "CLAMS1"
+
+mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, FEED1, Lightseries)
+test <- mouseT5$FEED1
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4446,7 +4444,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT0$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4471,7 +4469,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, FEED1, Lightseries)
 test <- mouseT5$FEED1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4602,7 +4600,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4627,7 +4625,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4660,7 +4658,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4685,7 +4683,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4718,7 +4716,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4743,7 +4741,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4776,7 +4774,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4801,7 +4799,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4834,7 +4832,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4859,7 +4857,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4892,7 +4890,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4917,7 +4915,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4950,7 +4948,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -4975,7 +4973,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5011,7 +5009,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5036,7 +5034,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5069,7 +5067,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5094,7 +5092,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5127,7 +5125,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5152,7 +5150,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5185,7 +5183,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5210,7 +5208,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5237,71 +5235,13 @@ ACFtib$mouse <- Pill
 ACFcombRW <- rbind(ACFcombRW, ACFtib)
 
 
-# Pill <- 6
-# 
-# mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, DRINK1, Lightseries)
-# test <- mouseT0$DRINK1
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT0 <- plot(ts_mouse)
-# testL <- mouseT0$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
-# colnames(T0acftib) <- c("hours","ACF")
-# T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T0acftib$ACF)
-# PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
-# T0acftib <- T0acftib %>% filter(hours == PeriodACF)
-# T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
-# colnames(T0ccftib) <- c("hours","ACF")
-# T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T0ccftib$ACF)
-# PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
-# T0acftib$PeriodACF <- T0acftib$hours * 17/15
-# T0acftib$PhaseCCF <- PhaseCCF
-# T0acftib$group <- "RW"
-# T0acftib$portion <- "CLAMS1"
-# 
-# mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
-#   select(datetime_corr, DRINK1, Lightseries)
-# test <- mouseT5$DRINK1
-# ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-# pT5 <- plot(ts_mouse)
-# testL <- mouseT5$Lightseries
-# ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
-# T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
-# T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
-# colnames(T5acftib) <- c("hours","ACF")
-# T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
-# MAX <- max(T5acftib$ACF)
-# PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
-# T5acftib <- T5acftib %>% filter(hours == PeriodACF)
-# T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
-# T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
-# colnames(T5ccftib) <- c("hours","ACF")
-# T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
-# MAX <- max(T5ccftib$ACF)
-# PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
-# T5acftib$PeriodACF <- T5acftib$hours * 17/15
-# T5acftib$PhaseCCF <- PhaseCCF
-# T5acftib$group <- "RW"
-# T5acftib$portion <- "CLAMS2"
-# 
-# 
-# ACFtib <- rbind(T0acftib,T5acftib)
-# ACFtib$mouse <- Pill
-# ACFcombRW <- rbind(ACFcombRW, ACFtib)
-
-
-Pill <- 7
+Pill <- 6
 
 mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5326,7 +5266,65 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
+testL <- mouseT5$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T5acftib <- as_tibble(cbind(T5acf$lag,T5acf$acf))
+colnames(T5acftib) <- c("hours","ACF")
+T5acftib <- T5acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T5acftib$ACF)
+PeriodACF <- T5acftib$hours[T5acftib$ACF == MAX]
+T5acftib <- T5acftib %>% filter(hours == PeriodACF)
+T5ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T5ccftib <- as_tibble(cbind(T5ccf$lag,T5ccf$acf))
+colnames(T5ccftib) <- c("hours","ACF")
+T5ccftib <- T5ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T5ccftib$ACF)
+PhaseCCF <- T5ccftib$hours[T5ccftib$ACF == MAX] * 17/15
+T5acftib$PeriodACF <- T5acftib$hours * 17/15
+T5acftib$PhaseCCF <- PhaseCCF
+T5acftib$group <- "RW"
+T5acftib$portion <- "CLAMS2"
+
+
+ACFtib <- rbind(T0acftib,T5acftib)
+ACFtib$mouse <- Pill
+ACFcombRW <- rbind(ACFcombRW, ACFtib)
+
+
+Pill <- 7
+
+mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, DRINK1, Lightseries)
+test <- mouseT0$DRINK1
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT0 <- plot(ts_mouse)
+testL <- mouseT0$Lightseries
+ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
+T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
+T0acftib <- as_tibble(cbind(T0acf$lag,T0acf$acf))
+colnames(T0acftib) <- c("hours","ACF")
+T0acftib <- T0acftib %>% filter(hours > 18*15/17 & hours < 30*15/17)
+MAX <- max(T0acftib$ACF)
+PeriodACF <- T0acftib$hours[T0acftib$ACF == MAX]
+T0acftib <- T0acftib %>% filter(hours == PeriodACF)
+T0ccf <- ccf(ts_mouse, ts_light, lag.max = 30 * 12, plot = FALSE)
+T0ccftib <- as_tibble(cbind(T0ccf$lag,T0ccf$acf))
+colnames(T0ccftib) <- c("hours","ACF")
+T0ccftib <- T0ccftib %>% filter(hours > 0 & hours < 24)
+MAX <- max(T0ccftib$ACF)
+PhaseCCF <- T0ccftib$hours[T0ccftib$ACF == MAX] * 17/15
+T0acftib$PeriodACF <- T0acftib$hours * 17/15
+T0acftib$PhaseCCF <- PhaseCCF
+T0acftib$group <- "RW"
+T0acftib$portion <- "CLAMS1"
+
+mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>% 
+  select(datetime_corr, DRINK1, Lightseries)
+test <- mouseT5$DRINK1
+ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5359,7 +5357,7 @@ mouseT0 <- SeriesT0 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT0$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT0 <- plot(ts_mouse)
+#pT0 <- plot(ts_mouse)
 testL <- mouseT0$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T0acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
@@ -5384,7 +5382,7 @@ mouseT5 <- SeriesT5 %>% filter(pill == Pill) %>%
   select(datetime_corr, DRINK1, Lightseries)
 test <- mouseT5$DRINK1
 ts_mouse <- ts(test, start = 1, frequency = 4, deltat = 1)
-pT5 <- plot(ts_mouse)
+#pT5 <- plot(ts_mouse)
 testL <- mouseT5$Lightseries
 ts_light <- ts(testL, start = 1, frequency = 4, deltat = 1)
 T5acf <- acf(ts_mouse, lag.max = 30*4, plot = FALSE)
